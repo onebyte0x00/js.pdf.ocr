@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OCR Text Extractor</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/tesseract.js@4/dist/tesseract.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>📄 OCR Text Extractor</h1>
+    <p>Upload an image or PDF to extract text.</p>
+    
+    <div class="upload-box">
+      <input type="file" id="fileInput" accept="image/*,.pdf" hidden>
+      <label for="fileInput" class="upload-btn">Choose File</label>
+      <span id="fileName">No file selected</span>
+      <button onclick="processFile()" class="extract-btn">Extract Text</button>
+    </div>
+
+    <div class="result-box">
+      <h3>Extracted Text:</h3>
+      <div id="result" class="result-text"></div>
+      <button id="downloadBtn" class="download-btn" disabled>Download as TXT</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
